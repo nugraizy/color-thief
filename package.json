@@ -48,6 +48,8 @@
         "mustache": "^3.0.1"
     },
     "dependencies": {
+        "axios": "^0.25.0",
+        "file-type": "^18.0.0",
         "get-pixels": "^3.3.2",
         "quantize": "github:lokesh/quantize"
     }
