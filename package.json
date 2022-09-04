@@ -49,7 +49,7 @@
     },
     "dependencies": {
         "axios": "^0.25.0",
-        "file-type": "^17.1.3",
+        "file-type": "^16.5.3",
         "get-pixels": "^3.3.2",
         "quantize": "github:lokesh/quantize"
     }
