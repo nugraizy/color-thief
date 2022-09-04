@@ -67,8 +67,19 @@ const validateOptions = (options) => {
 const loadImg = (img, mime) =>
 	new Promise((resolve, reject) => {
 		try {
-			const data = mime ? getPixels(img, mime) : getPixels(img);
-			resolve(data);
+			mime
+				? getPixels(img, mime, (err, data) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(data);
+				  })
+				: getPixels(img, (err, data) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(data);
+				  });
 		} catch (err) {
 			reject(err);
 		}
