@@ -1,13 +1,13 @@
 const getPixels = require("get-pixels");
 const quantize = require("quantize");
 const { default: Axios } = require("axios");
-const { fileTypeFromBuffer } = require("file-type");
+const { fromBuffer } = require("file-type");
 
 const isURL = (input) => /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/gi.test(input);
 
 const getMimetypes = async (buffer) => {
 	try {
-		const { mime } = await fileTypeFromBuffer(buffer);
+		const { mime } = await fromBuffer(buffer);
 		return mime;
 	} catch (err) {
 		return false;
